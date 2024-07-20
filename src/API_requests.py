@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import requests
+import json
 
 
 class ApiVacancies(ABC):
@@ -33,6 +34,6 @@ class VacanciesHH(ApiVacancies):
             return []
 
 
-vacancies = VacanciesHH()
-result = vacancies.get_vacancies('Python разработчик')
-print(result)
+# vacancies = VacanciesHH()
+# result = vacancies.get_vacancies('Python разработчик')
+# print(json.dumps(result, ensure_ascii=False, indent=4))
