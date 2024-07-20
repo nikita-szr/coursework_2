@@ -21,7 +21,7 @@ class VacanciesHH(ApiVacancies):
         params = {
             'text': search_query,
             'page': page,
-            'per_page': 20,
+            'per_page': 10,
             'area': 113,
         }
         try:
@@ -29,7 +29,7 @@ class VacanciesHH(ApiVacancies):
             data = response.json()
             if response.status_code == 200:
                 print("Запрос успешно выполнен")
-                return data
+                return data['items']
         except requests.RequestException as e:
             print(f"Ошибка при выполнении запроса: {e}")
             return []
