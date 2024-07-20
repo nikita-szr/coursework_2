@@ -20,8 +20,6 @@ class VacanciesHH(ApiVacancies):
     def get_vacancies(self, search_query: str, page: int = 0) -> list:
         params = {
             'text': search_query,
-            'page': page,
-            'per_page': 10,
             'area': 113,
         }
         try:
@@ -35,6 +33,6 @@ class VacanciesHH(ApiVacancies):
             return []
 
 
-# vacancies = VacanciesHH()
-# result = vacancies.get_vacancies('Python разработчик')
-# print(result)
+vacancies = VacanciesHH()
+result = vacancies.get_vacancies('Python разработчик')
+print(result)
