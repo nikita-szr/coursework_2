@@ -19,6 +19,7 @@ class VacanciesHH(ApiVacancies):
         }
 
     def get_vacancies(self, search_query: str, page: int = 0) -> list:
+        """Метод выполняющий api запрос на HH"""
         params = {
             'text': search_query,
             'area': 113,
@@ -34,6 +35,7 @@ class VacanciesHH(ApiVacancies):
             return []
 
 
-# vacancies = VacanciesHH()
+vacancies = VacanciesHH()
 # result = vacancies.get_vacancies('Python разработчик')
 # print(json.dumps(result, ensure_ascii=False, indent=4))
+# print(vacancies)
