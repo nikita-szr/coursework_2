@@ -38,15 +38,18 @@ class FileSaverToJSON(AbstractFileSaver):
             print("Ошибка декодирования JSON. Файл может быть пуст или содержать некорректные данные.")
             return []
 
+    def del_data(self):
+        """Удаление данных из JSON файла"""
+        with open(self.vacancy_data, "w", encoding="utf-8") as file:
+            json.dump([], file, ensure_ascii=False, indent=4)
+
     def add_data(self, vacancies):
         """Добавление данных в JSON файл"""
+        self.del_data()
         data = self.get_data()
         data.extend(vacancies)
 
         with open(self.vacancy_data, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
-    def del_data(self):
-        """Удаление данных из JSON файла"""
-        with open(self.vacancy_data, "w", encoding="utf-8") as file:
-            json.dump([], file, ensure_ascii=False, indent=4)
+

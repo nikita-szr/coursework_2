@@ -5,14 +5,15 @@ from src.utils import get_top_n_vacancies, search_vacancies_by_keyword
 
 
 def main():
+    """Запускает программу для работы с пользователем"""
     hh_api = VacanciesHH()
-    file_saver = FileSaverToJSON("../data/vacancies.json")
+    file_saver = FileSaverToJSON("C:\\Users\\nikit\\OneDrive\\Desktop\\it\\PythonProjects\\my_prj\\coursework_2\\data\\vacancies.json")
 
     while True:
-        print('1. Поиск вакансий на hh.ru'
-              '2. Вывести топ N вакансий по зарплате'
-              '3. Поиск вакансий по ключевому слову в описании'
-              '4. Завершить программу')
+        print(''''1. Поиск вакансий на hh.ru'
+'2. Вывести топ N вакансий по зарплате'
+'3. Поиск вакансий по ключевому слову в описании'
+'4. Завершить программу''')
 
         user_choice = input('Введите число: ')
         if user_choice == '1':
@@ -36,3 +37,7 @@ def main():
         elif user_choice == '4':
             print("Программа завершена.")
             break
+
+
+if __name__ == "__main__":
+    main()
