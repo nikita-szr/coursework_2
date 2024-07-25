@@ -7,7 +7,7 @@ from src.utils import get_top_n_vacancies, search_vacancies_by_keyword
 def main():
     """Запускает программу для работы с пользователем"""
     hh_api = VacanciesHH()
-    file_saver = FileSaverToJSON("C:\\Users\\nikit\\OneDrive\\Desktop\\it\\PythonProjects\\my_prj\\coursework_2\\data\\vacancies.json")
+    file_saver = FileSaverToJSON(r"./data/vacancies.json")
 
     while True:
         print(''''1. Поиск вакансий на hh.ru'
@@ -37,6 +37,9 @@ def main():
         elif user_choice == '4':
             print("Программа завершена.")
             break
+
+        else:
+            print("Вы ввели то что программа не поняла, извините)")
 
 
 if __name__ == "__main__":
