@@ -27,8 +27,15 @@ class FileSaverToJSON(AbstractFileSaver):
     def get_data(self):
         """Получение данных из JSON файла"""
         try:
-            return json.load(open(self.vacancy_data))
+            with open(self.vacancy_data, "r", encoding="utf-8") as file:
+                data = file.read()
+                if not data:
+                    return []
+                return json.loads(data)
         except FileNotFoundError:
+            return []
+        except json.JSONDecodeError:
+            print("Ошибка декодирования JSON. Файл может быть пуст или содержать некорректные данные.")
             return []
 
     def add_data(self, vacancies):
