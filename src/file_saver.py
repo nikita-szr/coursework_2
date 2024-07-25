@@ -32,7 +32,7 @@ class FileSaverToJSON(AbstractFileSaver):
             return []
 
     def add_data(self, vacancies):
-        """Добавление данных в JSON файла"""
+        """Добавление данных в JSON файл"""
         data = self.get_data()
         data.extend(vacancies)
 
