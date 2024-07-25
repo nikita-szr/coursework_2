@@ -1,5 +1,5 @@
-from abc import ABC, abstractmethod
 import json
+from abc import ABC, abstractmethod
 
 
 class AbstractFileSaver(ABC):
@@ -51,5 +51,3 @@ class FileSaverToJSON(AbstractFileSaver):
 
         with open(self.vacancy_data, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
-
-

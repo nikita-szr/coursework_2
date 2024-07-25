@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
+
 import requests
-import json
 
 
 class ApiVacancies(ABC):
@@ -33,9 +33,3 @@ class VacanciesHH(ApiVacancies):
         except requests.RequestException as e:
             print(f"Ошибка при выполнении запроса: {e}")
             return []
-
-
-vacancies = VacanciesHH()
-# result = vacancies.get_vacancies('Python разработчик')
-# print(json.dumps(result, ensure_ascii=False, indent=4))
-# print(vacancies)

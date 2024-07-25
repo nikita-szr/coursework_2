@@ -1,5 +1,5 @@
-from src.API_requests import ApiVacancies, VacanciesHH
-from src.file_saver import AbstractFileSaver, FileSaverToJSON
+from src.API_requests import VacanciesHH
+from src.file_saver import FileSaverToJSON
 from src.utils import get_top_n_vacancies, search_vacancies_by_keyword
 
 
